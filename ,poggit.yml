@@ -1,0 +1,7 @@
+build-by-default: true
+branches:
+  - main
+projects:
+  ItemEditor:
+    path: ""
+    icon: icon.png

@@ -1,0 +1,22 @@
+name: ItemEditor
+api: 5.0.0
+main: frostcheat\itemeditor\ItemEditor
+author: FrostCheat
+version: 0.1
+
+permissions:
+  itemeditor.command:
+    description: Main permission for /ie
+    default: op
+  itemeditor.command.edit:
+    description: Permission for command /ie edit
+    default: op
+  itemeditor.command.help:
+    description: Permission for command /ie help
+    default: op
+  itemeditor.command.reopen:
+    description: Permission for command /ie reopen
+    default: op
+  itemeditor.command.rename:
+    description: Permission for command /ie reopen
+    default: op
