@@ -7,7 +7,7 @@
   <a href="https://poggit.pmmp.io/ci/FrostCheatMC/ItemEditor/ItemEditor">  
     <img src="https://poggit.pmmp.io/ci.shield/FrostCheatMC/ItemEditor/ItemEditor?style=for-the-badge">  
   </a>  
-  <a href="https://discord.gg/aquanetwork">  
+  <a href="[https://discord.gg/aquanetwork](https://discord.gg/k8X7CG2kFv)">  
     <img src="https://img.shields.io/discord/365202594932719616.svg?style=for-the-badge&color=7289da&logo=discord&logoColor=white&logoWidth=12">  
   </a>
   <a href="https://poggit.pmmp.io/p/ItemEditor">  
