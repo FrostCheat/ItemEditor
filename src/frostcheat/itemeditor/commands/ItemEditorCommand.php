@@ -2,11 +2,14 @@
 
 namespace frostcheat\itemeditor\commands;
 
+use frostcheat\itemeditor\commands\subcommands\AmountSubCommand;
 use frostcheat\itemeditor\commands\subcommands\EditSubCommand;
 use frostcheat\itemeditor\commands\subcommands\HelpSubCommand;
 use frostcheat\itemeditor\commands\subcommands\RenameSubCommand;
 use frostcheat\itemeditor\commands\subcommands\ReOpenSubCommand;
-use frostcheat\itemeditor\libs\CortexPE\Commando\BaseCommand;
+use CortexPE\Commando\BaseCommand;
+use frostcheat\itemeditor\commands\subcommands\RepairSubCommand;
+use frostcheat\itemeditor\commands\subcommands\UnbreakableSubCommand;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\Plugin;
 
@@ -23,10 +26,13 @@ class ItemEditorCommand extends BaseCommand
 
     protected function prepare(): void
     {
-        $this->registerSubCommand(new EditSubCommand($this->plugin));
-        $this->registerSubCommand(new HelpSubCommand($this->plugin));
-        $this->registerSubCommand(new RenameSubCommand($this->plugin));
-        $this->registerSubCommand(new ReOpenSubCommand($this->plugin));
+        $this->registerSubCommand(new AmountSubCommand());
+        $this->registerSubCommand(new EditSubCommand());
+        $this->registerSubCommand(new RenameSubCommand());
+        $this->registerSubCommand(new ReOpenSubCommand());
+        $this->registerSubCommand(new RepairSubCommand());
+        $this->registerSubCommand(new UnbreakableSubCommand());
+        $this->registerSubCommand(new HelpSubCommand($this->getSubCommands()));
     }
 
     /**

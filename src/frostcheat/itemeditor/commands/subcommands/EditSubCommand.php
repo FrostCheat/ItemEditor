@@ -3,19 +3,19 @@
 namespace frostcheat\itemeditor\commands\subcommands;
 
 use frostcheat\itemeditor\ItemEditor;
-use frostcheat\itemeditor\libs\CortexPE\Commando\BaseSubCommand;
-use frostcheat\itemeditor\libs\CortexPE\Commando\constraint\InGameRequiredConstraint;
+
+use CortexPE\Commando\BaseSubCommand;
+use CortexPE\Commando\constraint\InGameRequiredConstraint;
+
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
-use pocketmine\plugin\Plugin;
 
 class EditSubCommand extends BaseSubCommand
 {
-    public function __construct(protected Plugin $plugin)
+    public function __construct()
     {
-        parent::__construct($plugin, 'edit', 'Edit a item');
+        parent::__construct('edit', 'Edit a item');
         $this->setPermission('itemeditor.command.edit');
-        $this->setPermissionMessage("§cYou don't have permission to us this command!");
     }
 
     protected function prepare(): void

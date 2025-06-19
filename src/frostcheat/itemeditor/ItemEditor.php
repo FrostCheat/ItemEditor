@@ -2,13 +2,17 @@
 
 namespace frostcheat\itemeditor;
 
-use frostcheat\itemeditor\commands\ItemEditorCommand;
-use frostcheat\itemeditor\libs\CortexPE\Commando\exception\HookAlreadyRegistered;
-use frostcheat\itemeditor\libs\CortexPE\Commando\PacketHooker;
-use frostcheat\itemeditor\libs\JackMD\UpdateNotifier\UpdateNotifier;
-use frostcheat\itemeditor\libs\muqsit\invmenu\InvMenuHandler;
+use CortexPE\Commando\exception\HookAlreadyRegistered;
+use CortexPE\Commando\PacketHooker;
+
+use JackMD\UpdateNotifier\UpdateNotifier;
+
+use muqsit\invmenu\InvMenuHandler;
+
 use frostcheat\itemeditor\listeners\PlayerChatListener;
 use frostcheat\itemeditor\screen\ScreenManager;
+use frostcheat\itemeditor\commands\ItemEditorCommand;
+
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
 

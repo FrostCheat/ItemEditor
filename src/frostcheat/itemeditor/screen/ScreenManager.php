@@ -2,12 +2,14 @@
 
 namespace frostcheat\itemeditor\screen;
 
+use muqsit\invmenu\InvMenu;
+use muqsit\invmenu\transaction\InvMenuTransaction;
+use muqsit\invmenu\transaction\InvMenuTransactionResult;
+use muqsit\invmenu\type\InvMenuTypeIds;
+
 use frostcheat\itemeditor\ItemEditor;
-use frostcheat\itemeditor\libs\muqsit\invmenu\InvMenu;
-use frostcheat\itemeditor\libs\muqsit\invmenu\transaction\InvMenuTransaction;
-use frostcheat\itemeditor\libs\muqsit\invmenu\transaction\InvMenuTransactionResult;
-use frostcheat\itemeditor\libs\muqsit\invmenu\type\InvMenuTypeIds;
 use frostcheat\itemeditor\utils\Utils;
+
 use pocketmine\block\utils\DyeColor;
 use pocketmine\block\VanillaBlocks;
 use pocketmine\item\enchantment\Enchantment;
@@ -21,7 +23,7 @@ use pocketmine\utils\TextFormat;
 
 class ScreenManager
 {
-    /** @var array<string, array{InvMenu,Item}>*/
+    /** @var array<string, array{InvMenu, Item}>*/
     public array $players = [];
 
     public array $managers = [];

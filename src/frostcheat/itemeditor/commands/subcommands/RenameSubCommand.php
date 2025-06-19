@@ -2,24 +2,22 @@
 
 namespace frostcheat\itemeditor\commands\subcommands;
 
-use frostcheat\itemeditor\libs\CortexPE\Commando\args\RawStringArgument;
-use frostcheat\itemeditor\libs\CortexPE\Commando\BaseSubCommand;
-use frostcheat\itemeditor\libs\CortexPE\Commando\constraint\InGameRequiredConstraint;
-use frostcheat\itemeditor\libs\CortexPE\Commando\exception\ArgumentOrderException;
+use CortexPE\Commando\args\RawStringArgument;
+use CortexPE\Commando\BaseSubCommand;
+use CortexPE\Commando\constraint\InGameRequiredConstraint;
+use CortexPE\Commando\exception\ArgumentOrderException;
 use pocketmine\command\CommandSender;
 use pocketmine\item\Armor;
 use pocketmine\item\Tool;
 use pocketmine\player\Player;
-use pocketmine\plugin\Plugin;
 use pocketmine\utils\TextFormat;
 
 class RenameSubCommand extends BaseSubCommand
 {
-    public function __construct(protected Plugin $plugin)
+    public function __construct()
     {
-        parent::__construct($plugin, 'rename', 'Rename a item in hand');
+        parent::__construct('rename', 'Rename a item in hand');
         $this->setPermission('itemeditor.command.rename');
-        $this->setPermissionMessage("§cYou don't have permission to us this command!");
     }
 
     /**

@@ -2,36 +2,25 @@
 
 namespace frostcheat\itemeditor\commands\subcommands;
 
-use frostcheat\itemeditor\libs\CortexPE\Commando\BaseSubCommand;
+use CortexPE\Commando\BaseSubCommand;
+
 use pocketmine\command\CommandSender;
-use pocketmine\plugin\Plugin;
 use pocketmine\utils\TextFormat;
 
 class HelpSubCommand extends BaseSubCommand
 {
-    public function __construct(protected Plugin $plugin)
+    public function __construct(private array $subCommands)
     {
-        parent::__construct($plugin, 'help', 'Help commands Item Editor');
+        parent::__construct('help', 'Help commands Item Editor');
         $this->setPermission('itemeditor.command.help');
-        $this->setPermissionMessage("§cYou don't have permission to us this command!");
     }
 
-    protected function prepare(): void
-    {
-        // TODO: Implement prepare() method.
-    }
+    protected function prepare(): void {}
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args): void
     {
-        $messages = [
-            "help" => "Help commands Item Editor",
-            "edit" => "Edit a item in hand",
-            "reopen" => "ReOpen a editor",
-            "rename" => "Rename a item in hand",
-        ];
-
-        foreach ($messages as $key => $message) {
-            $sender->sendMessage(TextFormat::colorize("&b/ie $key &f- &7$message"));
+        foreach ($this->subCommands as $subCommand) {
+            $sender->sendMessage(TextFormat::colorize("&b/ie " . $subCommand->getName() . " &f- &7" . $subCommand->getDescription()));
         }
     }
 }

@@ -3,19 +3,17 @@
 namespace frostcheat\itemeditor\commands\subcommands;
 
 use frostcheat\itemeditor\ItemEditor;
-use frostcheat\itemeditor\libs\CortexPE\Commando\BaseSubCommand;
-use frostcheat\itemeditor\libs\CortexPE\Commando\constraint\InGameRequiredConstraint;
+use CortexPE\Commando\BaseSubCommand;
+use CortexPE\Commando\constraint\InGameRequiredConstraint;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
-use pocketmine\plugin\Plugin;
 
 class ReOpenSubCommand extends BaseSubCommand
 {
-    public function __construct(protected Plugin $plugin)
+    public function __construct()
     {
-        parent::__construct($plugin, 'reopen', 'ReOpen a editor');
+        parent::__construct('reopen', 'ReOpen a editor');
         $this->setPermission('itemeditor.command.reopen');
-        $this->setPermissionMessage("§cYou don't have permission to us this command!");
     }
 
     protected function prepare(): void
